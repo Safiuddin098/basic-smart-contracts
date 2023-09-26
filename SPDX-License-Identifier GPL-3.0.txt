@@ -1,0 +1,54 @@
+//SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.8.2 <0.9.0;
+ 
+ contract myfirstcontract{
+     
+    //  uint public testnumber = 100;
+
+     
+    // uint public testnumber;
+ 
+    // constructor(uint new_num)
+    // {
+    //  testnumber = new_num;
+
+    // }
+
+    //we are calling number inside a functon
+   
+   // function show() public pure returns(uint)
+   // {
+   //    uint test = 10;
+   //   return test;
+   //  }
+ 
+//------------------------------------------------------
+
+// In this we are creating a function (Getter and Setter)
+//   uint num;
+//   function setter(uint _numValue) public 
+//  {
+//     num = _numValue;
+//  }
+  
+//   function getter() public view returns(uint)
+//   { 
+//     return num;
+//   }
+
+
+//--------------------------------------------
+
+// In this function we have called the num publically , we don't require getter function
+
+//      uint public num;
+
+//      function setter(uint _numValue) public 
+//   {
+//       num = _numValue;
+//   }
+  // we directly call out the set value of num
+
+
+
+ }
