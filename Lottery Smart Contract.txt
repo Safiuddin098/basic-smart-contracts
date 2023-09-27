@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.8.2 <0.9.0;
+
+contract lottercontract
+{
+ address public manager; //owner who deploy the contract , stores the ethereum address of the manager
+ address  payable[] public  candidates; // dienamic array , arraye named as candidates(stores ethereum address of candidates)
+ address payable public winner; //The candidate who wins the lottery
+  
+    constructor() //Contructor as function 
+    {
+        manager = msg.sender; //the person who deploy the contract should be the manager
+                              // deploying address will be stored in the manager
+                              //function of sending money is only allowed to the manager
+    }
+
+    receive() external  payable 
+    {
+        require(msg.value == 1 ether);        //the participants should pay 1 ether to participate 
+        candidates.push(payable(msg.sender)); //to add the participants address in the lottery
+    }
+
+    function getBalance() public view returns(uint)
+    {
+        require(msg.sender == manager);
+        return address(this).balance; //accessing the current balance by only manager
+    } 
+}
